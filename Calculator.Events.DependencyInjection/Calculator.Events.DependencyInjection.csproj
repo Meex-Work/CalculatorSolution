@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Calculator.Events.Handlers.Adapters\Calculator.Events.Handlers.Adapters.csproj" />
+      <ProjectReference Include="..\Calculator.Events.Handlers.Composites\Calculator.Events.Handlers.Composites.csproj" />
+      <ProjectReference Include="..\Calculator.Events.Handlers.Decorators\Calculator.Events.Handlers.Decorators.csproj" />
+      <ProjectReference Include="..\Calculator.Events.Handlers.Facades\Calculator.Events.Handlers.Facades.csproj" />
+      <ProjectReference Include="..\Calculator.Events.Handlers\Calculator.Events.Handlers.csproj" />
+      <ProjectReference Include="..\Calculator.Events.Handlers.Interfaces\Calculator.Events.Handlers.Interfaces.csproj" />
+      <ProjectReference Include="..\Calculator.Events\Calculator.Events.csproj" />
+      <ProjectReference Include="..\Calculator.States.DependencyInjection.Extensions\Calculator.States.DependencyInjection.Extensions.csproj" />
+      <ProjectReference Include="..\Calculator.States.Handlers\Calculator.States.Handlers.csproj" />
+      <ProjectReference Include="..\DependencyInjection.Interfaces\DependencyInjection.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>

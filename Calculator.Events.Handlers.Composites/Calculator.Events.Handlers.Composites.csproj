@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Calculator.Events.Abstracts\Calculator.Events.Abstracts.csproj" />
+      <ProjectReference Include="..\Calculator.Events.Handlers.Interfaces\Calculator.Events.Handlers.Interfaces.csproj" />
+      <ProjectReference Include="..\Calculator.Events.Handlers\Calculator.Events.Handlers.csproj" />
+      <ProjectReference Include="..\Calculator.Utils.Interfaces\Calculator.Utils.Interfaces.csproj" />
+      <ProjectReference Include="..\DependencyInjection.Interfaces\DependencyInjection.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>

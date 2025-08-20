@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Calculator.Commands.DependencyInjection\Calculator.Commands.DependencyInjection.csproj" />
+      <ProjectReference Include="..\Calculator.Events.DependencyInjection\Calculator.Events.DependencyInjection.csproj" />
+      <ProjectReference Include="..\Calculator.Queries.DependencyInjection\Calculator.Queries.DependencyInjection.csproj" />
+      <ProjectReference Include="..\Calculator.Services.DependencyInjection\Calculator.Services.DependencyInjection.csproj" />
+      <ProjectReference Include="..\Calculator.States.DependencyInjection\Calculator.States.DependencyInjection.csproj" />
+      <ProjectReference Include="..\Calculator.Utils.Dependencies\Calculator.Utils.Dependencies.csproj" />
+      <ProjectReference Include="..\DependencyInjection.Adapters\DependencyInjection.Adapters.csproj" />
+      <ProjectReference Include="..\DependencyInjection.Interfaces\DependencyInjection.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>

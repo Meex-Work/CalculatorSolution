@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Calculator.Utils\Calculator.Utils.csproj" />
+      <ProjectReference Include="..\DependencyInjection.Interfaces\DependencyInjection.Interfaces.csproj" />
+      <ProjectReference Include="..\DependencyInjection.Strategies.Interfaces\DependencyInjection.Strategies.Interfaces.csproj" />
+      <ProjectReference Include="..\DependencyInjection.Strategies\DependencyInjection.Strategies.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="8.3.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,3 @@
+﻿namespace DependencyInjection.Interfaces;
+
+public interface IDependencyContainerBuilder : IDependencyRegistrarOrBuild;
