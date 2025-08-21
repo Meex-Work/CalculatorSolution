@@ -24,37 +24,23 @@ The calculator is built using a state machine pattern with the following key com
 
 #### Calculator.States.Interface
 
-- **`IStateManager`**: Interface to manage the current state
-- **`IStateEventHandler<TEvent>`**: Interface to prepare state transition after event handling
-- **`IStateTransitionEventHandler<TEvent>`**: Interface to complete state transition after event handling
-- **`IStateEventHandlerTransitionBuilder<TEvent>`**: Interface to build state event handlers with associated
-  transitions
-
-#### Calculator.States.Handlers
-
-- **`StateEventHandler<TEvent>`**: Implementation to handle events and update the state
-
-#### Calculator.Events.Handlers.Interfaces
-
-- **`IEventHandler<TEvent>`**: Interface to handle events
+- **`IStateManager`**: Main interface to manage the current state
+- **`IStateEventHandler`**: Main interface to prepare state transition after event handling
+- **`IStateTransitionEventHandler`**: Main interface to complete state transition after event handling
+- **`IStateEventHandlerTransitionBuilder`**: Main interface to build state event handlers with associated transitions
 
 #### Calculator.Events.Handlers.Adapters
 
-- **`StateEventHandlerStrategyAdapter<TEvent>`**: Adapter to handle events and update the state of the program
-  strategically
-
-#### Calculator.Strategies.Interfaces
-
-- **`IStrategy<TContext, TTarget>`**: Interface to provide a strategy for a specific context  
+- **`StateEventHnadlerStrategyAdapter`**: Adapter to handle events and update the state of the program strategically
 
 ```mermaid
 classDiagram
     class IState {
-        +Name: string~readonly~
+        +Name: string ~readonly~
     }
 
     class IStateManager {
-        +State: IState~readonly~
+        +State: IState ~readonly~
         +Numbers: CalculationNumbers
         +SetState(state: IState) void
     }
@@ -71,26 +57,26 @@ classDiagram
         +Handle(@event: TEvent) TEvent
     }
 
-    class IStrategy~TContext, TTarget~ {
+    class IStrategy~TContext,TTarget~ {
 +Get(context: TContext) TTarget
 }
 
-class StateEventHandlerStrategyAdapter~TEvent~ {  
- }
-class StateEventHandler~TEvent~ {  
- }
+class StateEventHandlerStrategyAdapter~TEvent~ {
 
-IEventHandler <|.. StateEventHandlerStrategyAdapter: realizes
-StateEventHandlerStrategyAdapter o--> "1" IStateManager: stateManager
-StateEventHandlerStrategyAdapter o--> "1" IStrategy: strategies ~bind~ TContext -> IState, TTarget -> IStateEventHandler
+    }
+class StateEventHandler~TEvent~ {
 
-IStateEventHandler <|.. StateEventHandler: realizes
-IStateTransitionEventHandler <|.. StateEventHandler: realizes
+    }
+
+IEventHandler ..|> StateEventHandlerStrategyAdapter: realizes
+StateEventHandlerStrategyAdapter o--> "1" IStateManager: stateManageer
+StateEventHandlerStrategyAdapter o--> "1" IStrategy: TContext -> IState, TTarget -> IStateEventHandler
+IStateEventHandler ..|> StateEventHandler: realizes
+IStateTransitionEventHandler ..|> StateEventHandler: realizes
 StateEventHandler o--> "1" IEventHandler: eventHandler
 StateEventHandler o--> "1" IState: nextState
-
 IStateManager o--> "1" IState: manage
-IStateTransitionEventHandler ..> IStateManager: uses setState()
+IStateTransitionEventHandler ..> IState: uses
 IStateEventHandler --> IStateTransitionEventHandler: creates
 IStateEventHandler --> IEventHandler: handle event
 IStateEventHandlerTransitionBuilder --> IStateEventHandler: creates
