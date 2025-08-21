@@ -69,8 +69,8 @@ class StateEventHandler~TEvent~ {
     }
 
 IEventHandler ..|> StateEventHandlerStrategyAdapter: realizes
-StateEventHandlerStrategyAdapter o--> "1" IStateManager: stateManageer
-StateEventHandlerStrategyAdapter o--> "1" IStrategy: TContext -> IState, TTarget -> IStateEventHandler
+StateEventHandlerStrategyAdapter o--> "1" IStateManager: stateManager
+StateEventHandlerStrategyAdapter o--> "1" IStrategy: strategies TContext -> IState, TTarget -> IStateEventHandler
 IStateEventHandler ..|> StateEventHandler: realizes
 IStateTransitionEventHandler ..|> StateEventHandler: realizes
 StateEventHandler o--> "1" IEventHandler: eventHandler
